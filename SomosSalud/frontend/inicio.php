@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>ALOOOOOO</title>
     </head>
     <body>
         <?php
