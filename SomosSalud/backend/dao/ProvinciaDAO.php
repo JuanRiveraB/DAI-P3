@@ -21,7 +21,7 @@ class ProvinciaDAO implements MetodoZonas{
     
     public function listarPorIndice($indice) {        
         $listado = array();        
-        $query("Select * from provincia where PROVINCIA_REGION_ID=''");
+        $query("Select * from provincia where PROVINCIA_REGION_ID=':indice'");
         $sentencia = $this->conexion->prepare($query);
         $sentencia->bindParam(':indice',$indice);
         $sentencia->execute();
