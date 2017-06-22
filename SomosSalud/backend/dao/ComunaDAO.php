@@ -5,7 +5,7 @@
  * @author " "
  */
 include_once __DIR__."/MetodoZonas.php";
-include_once __DIR__."/../domain/Comuna.php";
+include_once __DIR__."../domain/Comuna.php";
 
 class ComunaDAO implements MetodoZonas{
     /**

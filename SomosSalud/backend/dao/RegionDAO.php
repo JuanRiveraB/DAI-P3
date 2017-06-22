@@ -1,7 +1,7 @@
 <?php
 
 include_once __DIR__."/MetodoZonas.php";
-include_once __DIR__."/../domain/Region.php";
+include_once __DIR__."../domain/Region.php";
 /**
  * Description of RegionDAO
  *

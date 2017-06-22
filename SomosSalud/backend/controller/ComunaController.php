@@ -4,8 +4,8 @@
  *
  * @author " "
  */    
-include_once __DIR__ . "/../dao/DBConnection.php";
-include_once __DIR__ . "/../dao/ComunaDAO.php";
+include_once __DIR__ . "../dao/DBConnection.php";
+include_once __DIR__ . "../dao/ComunaDAO.php";
 
 class ComunaController {
     
