@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Inicio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+        <script src="js/formulario.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="contenido" role="main">
+            <form id="beneficiario" action="#" method="POST">
+                <fieldset>
+                    <legend>Datos del cliente y beneficiario</legend>
+                    <div id="DatosCliente">
+                        <input name="rut" type="text" placeholder="RUT" required=""/>
+                        <br/>
+                        <input name="nombre" type="text" placeholder="Nombre" required=""/>
+                        <br/>
+                        <input name="apellido" type="text" placeholder="Apellido" required=""/>
+                        <br/>
+                        <select>
+                            <option> - Beneficiario -</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Zona de atención</legend>
+                    <div id="DatosAtencion">
+                        <select name="region">
+                            <option value=""> - Región -</option>
+                        </select>
+                        <br/>
+                        <select name="provincia">
+                            <option> - Provincia -</option>
+                        </select>
+                        <br/>
+                        <select name="comuna">
+                            <option> - Comuna -</option>
+                        </select>
+                        <br/>
+                        <label>Fecha de Atención</label>
+                        <input name="atencion" type="date"/>
+                    </div>
+                </fieldset>
+                <input type="reset" value="Limpiar"/>
+                <input type="submit" value="Agendar"/>
+            </form>
+        </div>
+    </body>
+</html>
