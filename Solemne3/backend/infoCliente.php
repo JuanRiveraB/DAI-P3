@@ -1,6 +1,6 @@
 <?php
 /**
- * Description of infoComuna
+ * Description of infoPersona
  *
  * @author Juan
  */

@@ -36,9 +36,9 @@ jQuery(document).ready(function () {
                             jQuery("select[name='beneficiario'] option").remove();
                             jQuery("select[name='beneficiario']").append("<option value=\"\">-- Seleccione el beneficiario --</option>");
 
-                            jQuery.each(titular.beneficiarios, function (indice, beneficiario) {
+                            /*jQuery.each(titular.beneficiarios, function (indice, beneficiario) {
                                 jQuery("select[name='beneficiario']").append("<option value=\"" + beneficiario.id + "\">" + beneficiario.nombre + " " + beneficiario.apellido + "</option>");
-                            });
+                            });*/
                         } else {
                             alert('Es menor de Edad');
                             return;
