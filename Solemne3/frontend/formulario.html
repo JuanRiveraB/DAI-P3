@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
         <script src="js/formulario.js" type="text/javascript"></script>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery.Rut.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="contenido" role="main">
@@ -15,9 +17,9 @@
                     <div id="DatosCliente">
                         <input name="rut" type="text" placeholder="RUT" required=""/>
                         <br/>
-                        <input name="nombre" type="text" placeholder="Nombre" required=""/>
+                        <input name="nombre" type="text" placeholder="Nombre" onfocus = "this.blur()" required=""/>
                         <br/>
-                        <input name="apellido" type="text" placeholder="Apellido" required=""/>
+                        <input name="apellido" type="text" placeholder="Apellido" onfocus = "this.blur()" required=""/>
                         <br/>
                         <select>
                             <option> - Beneficiario -</option>
