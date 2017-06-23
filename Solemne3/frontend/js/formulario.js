@@ -22,10 +22,27 @@ jQuery(document).ready(function () {
         var idRegion = $(this).val();
         jQuery("select[name='provincia'] option").remove()
         jQuery("select[name='provincia']").append("<option value=\"\">-- Seleccione una provincia --</option>");
+        jQuery("select[name='comuna'] option").remove()
+        jQuery("select[name='comuna']").append("<option value=\"\">-- Seleccione una Comuna --</option>");
         jQuery.getJSON("/DAI-P3/Solemne3/backend/infoProvincias.php",{id:idRegion},
                 function (provincias) {
                     jQuery.each(provincias, function (indice, provincia) {
                         jQuery("select[name='provincia']").append("<option value=\"" + provincia["idProvincia"] + "\">" + provincia["nombreProvincia"] + "</option>");
+                    });
+                });
+    });
+    
+    /**
+     * Manejo de Comunas
+     */    
+    jQuery("select[name='provincia']").change(function () {        
+        var idRegion = $(this).val();
+        jQuery("select[name='comuna'] option").remove()
+        jQuery("select[name='comuna']").append("<option value=\"\">-- Seleccione una Comuna --</option>");
+        jQuery.getJSON("/DAI-P3/Solemne3/backend/infoComuna.php",{id:idRegion},
+                function (comunas) {
+                    jQuery.each(comunas, function (indice, comuna) {
+                        jQuery("select[name='comuna']").append("<option value=\"" + comuna["idComuna"] + "\">" + comuna["nombreComuna"] + "</option>");
                     });
                 });
     });
