@@ -19,7 +19,6 @@ class DBConnection {
 
     public static function getConexion() {
         $dsn = "mysql:host=" . self::HOST . ";dbname=" . self::DBNAME . ";port=" . self::PORT . ";charset=utf8";
-
         try {
             $dbConexion = new PDO($dsn, self::USER, self::PASS);
             return $dbConexion;

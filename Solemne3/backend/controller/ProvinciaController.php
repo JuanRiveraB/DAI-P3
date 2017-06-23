@@ -7,7 +7,7 @@
 
 include_once __DIR__ . "\..\dao\DBConnection.php";
 include_once __DIR__ . "\..\domain\Region.php";
-include_once __DIR__ . "\..\dao\RegionDAO.php";
+include_once __DIR__ . "\..\dao\ProvinciaDAO.php";
 
 class ProvinciaController {
     
