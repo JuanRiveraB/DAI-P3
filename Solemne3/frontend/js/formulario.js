@@ -23,14 +23,14 @@ jQuery(document).ready(function () {
             var rutSinFormato = jQuery.Rut.quitarFormato(this.value);
             var mantisa = rutSinFormato.slice(0, rutSinFormato.length - 1);
 
-            jQuery.getJSON("/DAI-P3/Solemne3/backend/info-cliente.php",
+            jQuery.getJSON("/DAI-P3/Solemne3/backend/infoCliente.php",
                     {id: mantisa},
                     function (titular) {
-                        if (edad(titular.fechaNacimiento) === true) {
-                            jQuery("input[name='nombre']").val(titular.nombre);
+                        if (edad(titular.fecNac) === true) {
+                            jQuery("input[name='nombre']").val(titular.nombrePersona);
                             jQuery("input[name='nombre']").attr("readonly", true);
 
-                            jQuery("input[name='apellido']").val(titular.apellido);
+                            jQuery("input[name='apellido']").val(titular.apellidoPersona);
                             jQuery("input[name='apellido']").attr("readonly", true);
 
                             jQuery("select[name='beneficiario'] option").remove();

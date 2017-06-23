@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Description of ComunaController
+ *
+ * @author Juan
+ */
 include_once __DIR__ . "\..\dao\DBConnection.php";
 include_once __DIR__ . "\..\domain\Region.php";
 include_once __DIR__ . "\..\dao\RegionDAO.php";
