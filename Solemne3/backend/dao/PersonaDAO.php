@@ -1,10 +1,10 @@
 <?php
 /**
- * Description of ProvinciaDAO
+ * Description of PersonaDAO
  *
  * @author Juan
  */
-include_once __DIR__ . "\..\domain\Provincia.php";
+include_once __DIR__ . "\..\domain\Persona.php";
 include_once __DIR__ . "\Metodos.php";
 
 class PersonaDAO implements Metodos {
