@@ -1,10 +1,4 @@
 jQuery(document).ready(function () {
-    jQuery.ajaxSetup({
-        "error": function (respuesta, jqXHR, errorMsg) {
-            alert("ha ocurrido el siguiente error: " + errorMsg);
-        }
-    });
-    
     /**
      * Manejo del campo RUT
      */
@@ -14,17 +8,15 @@ jQuery(document).ready(function () {
 
             if (!validarRut()) {
                 jQuery(this).addClass("error");
-                alert('Rut invalido');
-                return;
+                alert('El rut ingresado no esta correcto');
             } else {
                 jQuery(this).removeClass("error");
             }
 
             var rutSinFormato = jQuery.Rut.quitarFormato(this.value);
-            var mantisa = rutSinFormato.slice(0, rutSinFormato.length - 1);
 
             jQuery.getJSON("/DAI-P3/Solemne3/backend/infoCliente.php",
-                    {id: mantisa},
+                    {id: rutSinFormato},
                     function (titular) {
                         if (edad(titular.fecNac) === true) {
                             jQuery("input[name='nombre']").val(titular.nombrePersona);
@@ -38,7 +30,7 @@ jQuery(document).ready(function () {
                         }
                     });
             jQuery.getJSON("/DAI-P3/Solemne3/backend/infoCargas.php",
-                    {id: mantisa},
+                    {id: rutSinFormato},
                     function (cargas) {
                             jQuery("select[name='beneficiarios'] option").remove();
                             jQuery("select[name='beneficiarios']").append("<option value=\"\">-- Seleccione el beneficiario --</option>");
