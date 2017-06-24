@@ -44,8 +44,8 @@ jQuery(document).ready(function () {
                             jQuery("select[name='beneficiarios']").append("<option value=\"\">-- Seleccione el beneficiario --</option>");
                             
                         jQuery.each(cargas, function (indice, carga) {
-                            var nombreCompleto = carga[0].nombrePersona + " " + carga[0].apellidoPersona;
-                            jQuery("select[name='beneficiarios']").append("<option value=\"" + carga[0].idPersona + "\">" + nombreCompleto + "</option>");
+                            var nombreCompleto = carga["nombrePersona"] + " " + carga["apellidoPersona"];
+                            jQuery("select[name='beneficiarios']").append("<option value=\"" + carga["idPersona"] + "\">" + nombreCompleto + "</option>");
                             ;
                         });
                     });

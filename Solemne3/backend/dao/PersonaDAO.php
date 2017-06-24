@@ -48,10 +48,10 @@ class PersonaDAO implements Metodos {
         $registros->execute();
         while ($registro = $registros->fetch()) {
             $persona = new Persona();
-            $persona->setIdPersona($fila["0"]);
-            $persona->setNombrePersona($fila["1"]);
-            $persona->setApellidoPersona($fila["2"]);
-            $persona->setFecNacimientoPersona($fila["3"]);
+            $persona->setIdPersona($registro["0"]);
+            $persona->setNombrePersona($registro["1"]);
+            $persona->setApellidoPersona($registro["2"]);
+            $persona->setFecNacimientoPersona($registro["3"]);
             array_push($listado, $persona);
         }
         return $listado;
