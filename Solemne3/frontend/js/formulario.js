@@ -4,7 +4,7 @@ jQuery(document).ready(function () {
             alert("ha ocurrido el siguiente error: " + errorMsg);
         }
     });
-
+    
     /**
      * Manejo del campo RUT
      */
@@ -107,21 +107,6 @@ function edad(fechaNacimiento) {
         return false;
     }
     return true;
-}
-
-function validarFechaMayor(fechaInicial, fechaFinal)
-{
-    valuesStart = fechaInicial.split("/");
-    valuesEnd = fechaFinal.split("/");
-
-    // Verificamos que la fecha no sea posterior a la actual
-    var dateStart = new Date(valuesStart[2], (valuesStart[1] - 1), valuesStart[0]);
-    var dateEnd = new Date(valuesEnd[2], (valuesEnd[1] - 1), valuesEnd[0]);
-    if (dateStart >= dateEnd)
-    {
-        return true;
-    }
-    return false;
 }
 
 
