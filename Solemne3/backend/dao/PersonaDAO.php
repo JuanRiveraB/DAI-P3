@@ -42,19 +42,17 @@ class PersonaDAO implements Metodos {
 
     public function listarTodosBeneficiarios($id) {
         $listado = Array();
-        $query = "SELECT * FROM PERSONA P JOIN CARGA_LEGAL CL ON (CL.BENEFICIARIO_ID=P.PERSONA_ID) WHERE CL.TITULAR_ID= :personaId";
+        $query = 'SELECT P.PERSONA_ID, P.PERSONA_NOMBRE, P.PERSONA_APELLIDO, P.PERSONA_FECHA_NACIMIENTO FROM PERSONA P JOIN CARGA_LEGAL CL ON (CL.BENEFICIARIO_ID = P.PERSONA_ID) WHERE CL.TITULAR_ID = :personaId';
         $registros = $this->conexion->prepare($query);
         $registros->bindParam(':personaId', $id);
         $registros->execute();
-        if ($registros != null) {
-            while ($registro = $registros->fetch()) {
-                $persona = new Persona();
-                $persona->setIdPersona($fila["0"]);
-                $persona->setNombrePersona($fila["1"]);
-                $persona->setApellidoPersona($fila["2"]);
-                $persona->setFecNacimientoPersona($fila["3"]);
-                array_push($listado, $persona->jsonSerialize());
-            }
+        while ($registro = $registros->fetch()) {
+            $persona = new Persona();
+            $persona->setIdPersona($fila["0"]);
+            $persona->setNombrePersona($fila["1"]);
+            $persona->setApellidoPersona($fila["2"]);
+            $persona->setFecNacimientoPersona($fila["3"]);
+            array_push($listado, $persona);
         }
         return $listado;
     }
