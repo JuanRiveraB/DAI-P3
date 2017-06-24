@@ -21,7 +21,7 @@
     </head>
     <body>
         <div id="contenido" role="main">
-            <form id="beneficiario" action="#" method="POST">
+            <form id="beneficiario" action="agendado.php" method="POST">
                 <fieldset>
                     <legend>Datos del cliente y beneficiario</legend>
                     <div id="DatosCliente">

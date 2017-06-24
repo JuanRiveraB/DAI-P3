@@ -6,7 +6,6 @@
  */
 class Atencion {
     
-    private $idAtencion;
     private $idBeneficiario;
     private $fecAtencion;
     private $comunaID;
@@ -15,10 +14,6 @@ class Atencion {
         
     }
     
-    function getIdAtencion() {
-        return $this->idAtencion;
-    }
-
     function getIdBeneficiario() {
         return $this->idBeneficiario;
     }
@@ -30,11 +25,7 @@ class Atencion {
     function getComunaID() {
         return $this->comunaID;
     }
-
-    function setIdAtencion($idAtencion) {
-        $this->idAtencion = $idAtencion;
-    }
-
+    
     function setIdBeneficiario($idBeneficiario) {
         $this->idBeneficiario = $idBeneficiario;
     }
@@ -48,8 +39,7 @@ class Atencion {
     }
     
     public function jsonSerialize() {
-        $arregloAsociativo = Array(["idAtencion" => $this->idAtencion,
-                                   "idBeneficiario" => $this->idBeneficiario,
+        $arregloAsociativo = Array(["idBeneficiario" => $this->idBeneficiario,
                                    "fecAtencion" => $this->fecAtencion,
                                    "comunaID" => $this->comunaID]);
         return $arregloAsociativo;
