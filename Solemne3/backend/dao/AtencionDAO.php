@@ -19,14 +19,14 @@ class AtencionDAO {
     }
     
      public function agregarAtencion($registro) {
-        $query = "INSERT INTO atencion (BENEFICIARIO_ID, FECHA_ATENCION, COMUNA_ID) values (:beneficiario_id, :fecha_atencion, :comuna_id)";        
+        $query = "INSERT INTO ATENCION (BENEFICIARIO_ID, FECHA_ATENCION, COMUNA_ID) values (:beneficiarioId, :fechaAtencion, :comunaId)";        
         $sentencia =  $this->conexion->prepare($query);        
         $beneficiario = $registro->getIdBeneficiario();
         $fecha = $registro->getFecAtencion();
         $comuna = $registro->getComunaID();        
-        $sentencia->bindParam(':beneficiario_id', $beneficiario);
-        $sentencia->bindParam(':fecha_atencion', $fecha);
-        $sentencia->bindParam(':comuna_id',$comuna);
+        $sentencia->bindParam(':beneficiarioId', $beneficiario);
+        $sentencia->bindParam(':fechaAtencion', $fecha);
+        $sentencia->bindParam(':comunaId',$comuna);
         
         return $sentencia->execute();
     } 
