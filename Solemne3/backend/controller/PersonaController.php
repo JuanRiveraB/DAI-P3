@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 <?php
-
 /**
  * Description of PersonaController
  *
@@ -8,6 +6,7 @@
  */
 include_once __DIR__ . "\..\dao\DBConnection.php";
 include_once __DIR__ . "\..\domain\Persona.php";
+include_once __DIR__ . "\..\domain\CargaLegal.php";
 include_once __DIR__ . "\..\dao\PersonaDAO.php";
 
 class PersonaController {
@@ -15,17 +14,13 @@ class PersonaController {
     public static function buscarPorId($id) {
 
         $conexion = DBConnection::getConexion();
-        $personaDAO = new PersonaDAO($conexion);
-        $persona = new Persona();
-        $persona = $personaDAO->buscarPorIndice($id);
-        return json_encode($persona->jsonSerialize());
+        $personaDAO = new PersonaDAO($conexion);;
+        return json_encode($personaDAO->buscarPorIndice($id)->jsonSerialize());
     }
-
-    public static function listarTodos() {
-
+    
+    public static function BeneficiariosPorRutTitular($id){
         $conexion = DBConnection::getConexion();
-        $regionDAO = new RegionDAO($conexion);
-        return json_encode($regionDAO->listarTodos());
+        $personaDao = new PersonaDAO($conexion);        
+        return json_encode($personaDao->listarTodosBeneficiarios($id));
     }
-
 }

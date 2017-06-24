@@ -4,7 +4,7 @@
  *
  * @author F4YW3K
  */
-class CargaLegal {
+class CargaLegal implements JsonSerializable{
     
     private $idTitular;
     private $beneficiarioID;

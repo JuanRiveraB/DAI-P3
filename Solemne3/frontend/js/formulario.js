@@ -32,17 +32,22 @@ jQuery(document).ready(function () {
 
                             jQuery("input[name='apellido']").val(titular.apellidoPersona);
                             jQuery("input[name='apellido']").attr("readonly", true);
-
-                            jQuery("select[name='beneficiario'] option").remove();
-                            jQuery("select[name='beneficiario']").append("<option value=\"\">-- Seleccione el beneficiario --</option>");
-
-                            /*jQuery.each(titular.beneficiarios, function (indice, beneficiario) {
-                                jQuery("select[name='beneficiario']").append("<option value=\"" + beneficiario.id + "\">" + beneficiario.nombre + " " + beneficiario.apellido + "</option>");
-                            });*/
                         } else {
                             alert('Es menor de Edad');
                             return;
                         }
+                    });
+            jQuery.getJSON("/DAI-P3/Solemne3/backend/infoCargas.php",
+                    {id: mantisa},
+                    function (cargas) {
+                            jQuery("select[name='beneficiarios'] option").remove();
+                            jQuery("select[name='beneficiarios']").append("<option value=\"\">-- Seleccione el beneficiario --</option>");
+                            
+                        jQuery.each(cargas, function (indice, carga) {
+                            var nombreCompleto = carga.nombrePersona + " " + carga.apellidoPersona;
+                            jQuery("select[name='beneficiarios']").append("<option value=\"" + carga.idPersona + "\">" + nombreCompleto + "</option>");
+                            ;
+                        });
                     });
         }
     });
@@ -64,8 +69,6 @@ jQuery(document).ready(function () {
         var idRegion = $(this).val();
         jQuery("select[name='provincia'] option").remove()
         jQuery("select[name='provincia']").append("<option value=\"\">-- Seleccione una provincia --</option>");
-        jQuery("select[name='comuna'] option").remove()
-        jQuery("select[name='comuna']").append("<option value=\"\">-- Seleccione una Comuna --</option>");
         jQuery.getJSON("/DAI-P3/Solemne3/backend/infoProvincias.php", {id: idRegion},
                 function (provincias) {
                     jQuery.each(provincias, function (indice, provincia) {

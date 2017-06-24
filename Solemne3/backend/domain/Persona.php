@@ -4,7 +4,7 @@
  *
  * @author F4YW3K
  */
-class Persona {
+class Persona implements JsonSerializable{
     
     private $idPersona;
     private $nombrePersona;
@@ -48,11 +48,10 @@ class Persona {
     }
 
     public function jsonSerialize() {
-        $arregloAsociativo = Array(["idPersona" => $this->idPersona,
+        $arregloAsociativo = Array("idPersona" => $this->idPersona,
                                    "nombrePersona" => $this->nombrePersona,
                                    "apellidoPersona"=>  $this->apellidoPersona, 
-                                   "fecNac" => $this->FecNacimientoPersona]);
+                                   "fecNac" => $this->FecNacimientoPersona);
         return $arregloAsociativo;
     }
-
 }
